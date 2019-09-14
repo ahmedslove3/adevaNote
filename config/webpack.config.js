@@ -13,6 +13,14 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
+      {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         loader: 'file-loader?name=[name].[ext]',
       },
@@ -20,6 +28,11 @@ module.exports = {
         test: /\.js$/,
         use: ['babel-loader'],
         exclude: /node_modules/,
+      },
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        use: "babel-loader"
       },
       {
         test: /\.s?css$/,
@@ -70,6 +83,7 @@ module.exports = {
     ],
   },
   resolve: {
+    modules: ['src', 'node_modules'],
     extensions: ['.js', '.jsx'],
   },
 };
