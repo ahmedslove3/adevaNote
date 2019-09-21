@@ -1,0 +1,13 @@
+.editorWrapper {
+  height: 100%;
+}
+
+.toolbarWrapper {
+  margin-bottom: 20px;
+}
+
+.textWrapper {
+  height: calc(100% - 20px);
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+}
